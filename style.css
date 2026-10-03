@@ -76,10 +76,38 @@ img {
   display: block;
 }
 
+/* Черновые плейсхолдеры — видно с первого взгляда, что нужно заменить,
+   но не выглядит как сломанная вёрстка */
+.draft-tag {
+  display: inline-block;
+  font-family: var(--font-text);
+  font-size: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--berry);
+  background: rgba(168, 68, 72, 0.08);
+  border: 1px dashed var(--berry);
+  padding: 2px 8px;
+  border-radius: 999px;
+  margin-left: 8px;
+  vertical-align: middle;
+}
+
 .draft-text {
+  /* Было dashed — по просьбе сделал сплошной линией (пунктир остаётся
+     только у кнопок-заглушек через .btn--draft) */
   border-left: 2px solid var(--pink-deep);
   padding-left: 12px;
   color: var(--text-dim);
+}
+
+/* Для кнопок черновая рамка по левому краю не подходит (ломает форму
+   пилюли) — вместо этого вся кнопка пунктирная, пока не вставлена
+   настоящая ссылка */
+.btn--draft {
+  border-style: dashed !important;
+  opacity: 0.7;
 }
 
 /* ==========================================================================
@@ -120,6 +148,11 @@ img {
 .topbar__nav {
   display: flex;
   gap: clamp(16px, 3vw, 32px);
+}
+
+.topbar__links {
+  display: flex;
+  gap: 10px;
 }
 
 .topbar__nav a {
@@ -181,6 +214,11 @@ img {
 .btn--telegram svg {
   width: 18px;
   height: 18px;
+}
+
+.btn--icon svg {
+  width: 15px;
+  height: 15px;
 }
 
 /* ==========================================================================
@@ -303,10 +341,18 @@ img {
 }
 
 @media (max-width: 760px) {
-  /* На телефоне веточки и сердечки отвлекали бы от текста — убираем */
-  .hero__sprig,
-  .heart {
-    display: none;
+  /* Были скрыты на телефоне — по просьбе оставляем, но делаем компактнее,
+     чтобы не спорили с текстом на узком экране */
+  .hero__sprig {
+    width: 56px;
+  }
+
+  .hero__sprig--left {
+    left: 8px;
+  }
+
+  .hero__sprig--right {
+    right: 8px;
   }
 }
 
@@ -550,11 +596,94 @@ img {
   margin-bottom: 6px;
 }
 
+.product__price-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
 .product__price {
   font-size: 18px;
   font-weight: 600;
   color: var(--pink-deep);
-  margin-bottom: 12px;
+}
+
+/* --- Выбор запаха: кнопка справа от цены, список выпадает под ней --- */
+
+.product__scent {
+  position: relative;
+}
+
+.product__scent-toggle {
+  padding: 7px 14px;
+  border-radius: 999px;
+  border: 1px solid var(--pink-deep);
+  background: transparent;
+  color: var(--pink-deep);
+  font-family: var(--font-text);
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 0.25s ease, color 0.25s ease;
+}
+
+.product__scent-toggle:hover,
+.product__scent-toggle:focus-visible {
+  background: var(--pink-deep);
+  color: #fff;
+}
+
+.product__scent-list {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  z-index: 5;
+  display: flex;
+  flex-direction: column;
+  min-width: 190px;
+  background: var(--bg-card);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  box-shadow: 0 10px 28px rgba(60, 47, 40, 0.14);
+  padding: 6px;
+  /* Список спрятан по умолчанию — открывается через .is-open на
+     родителе .product__scent, когда нажали "Выбрать запах" */
+  opacity: 0;
+  transform: translateY(-6px);
+  pointer-events: none;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.product__scent.is-open .product__scent-list {
+  opacity: 1;
+  transform: none;
+  pointer-events: auto;
+}
+
+.scent-option {
+  padding: 9px 10px;
+  border: none;
+  border-radius: 5px;
+  background: transparent;
+  color: var(--text);
+  font-family: var(--font-text);
+  font-size: 13px;
+  text-align: left;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.scent-option:hover,
+.scent-option:focus-visible {
+  background: var(--bg-alt);
+}
+
+.scent-option.is-active {
+  color: var(--pink-deep);
+  font-weight: 600;
 }
 
 .product__desc {
@@ -634,14 +763,10 @@ img {
   margin-bottom: 28px;
 }
 
-.contacts__phone {
-  margin-bottom: 28px;
-  font-size: 15px;
-}
-
-.contacts__phone a {
-  text-decoration: none;
-  font-weight: 600;
+.contacts__buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
 }
 
 /* ==========================================================================
