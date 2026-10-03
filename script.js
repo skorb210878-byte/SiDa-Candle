@@ -180,4 +180,3 @@ document.querySelectorAll('.product__buy').forEach((btn) => {
     window.open(`https://t.me/anastexxx?text=${text}`, '_blank', 'noopener');
   });
 });
-
