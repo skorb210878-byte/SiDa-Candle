@@ -30,7 +30,16 @@
       <a href="#about">О мастере</a>
       <a href="#contacts">Контакты</a>
     </nav>
-    <a href="https://t.me/anastexxx" target="_blank" rel="noopener" class="btn btn--small">Telegram</a>
+    <div class="topbar__links">
+      <a href="https://t.me/anastexxx" target="_blank" rel="noopener" class="btn btn--small btn--icon">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 4 3 11l6 2 2 6 3-4 5 3Z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M9 13l9-7" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
+        Telegram
+      </a>
+      <a href="https://max.ru/u/f9LHodD0cOLWn0wAa0ka9zTOS3oyFRQGdNlT3SwSWHForhKJPjMu4NOihv0" target="_blank" rel="noopener" class="btn btn--small btn--icon">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4a8 8 0 0 0-8 8 7.8 7.8 0 0 0 1.8 5L5 20l3.3-1.5A8 8 0 1 0 12 4Z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+        MAX
+      </a>
+    </div>
   </header>
 
   <!-- ==========================================================
@@ -125,7 +134,7 @@
       <div class="products">
 
         <!-- ---------- Свеча №1 ---------- -->
-        <article class="product" data-order-text="Здравствуйте! Хочу заказать: Гипсовый набор с золотой поталью (900 ₽)">
+        <article class="product" data-base-order="Здравствуйте! Хочу заказать: Гипсовый набор с золотой поталью (900 ₽)">
           <div class="product__gallery">
             <!-- ЧТОБЫ ДОБАВИТЬ ФОТО: скопируй одну строку "product__slide" ниже,
                  поменяй имя файла в url('images/...') и текст в aria-label.
@@ -140,8 +149,21 @@
             <div class="product__dots"></div>
           </div>
           <div class="product__info">
-            <h3 class="product__name">Гипсовый набор с золотой поталью🌸</h3>
-            <p class="product__price">900 ₽</p>
+            <h3 class="product__name">Гипсовый набор с золотой поталью</h3>
+            <div class="product__price-row">
+              <p class="product__price">900 ₽</p>
+              <div class="product__scent">
+              <button type="button" class="product__scent-toggle">Выбрать запах</button>
+              <div class="product__scent-list">
+                <button type="button" class="scent-option" data-scent="Синнабон">Синнабон</button>
+                <button type="button" class="scent-option" data-scent="Попкорн">Попкорн</button>
+                <button type="button" class="scent-option" data-scent="Бананово-ореховый хлеб">Бананово-ореховый хлеб</button>
+                <button type="button" class="scent-option" data-scent="Солёная карамель">Солёная карамель</button>
+                <button type="button" class="scent-option" data-scent="Тыква-карамель">Тыква-карамель</button>
+                <button type="button" class="scent-option" data-scent="Малина-ваниль">Малина-ваниль</button>
+              </div>
+            </div>
+            </div>
             <p class="product__desc">В набор входят поднос, шкатулка и ваза — все предметы отлиты из гипса вручную и покрыты золотой поталью. Сухоцветы на фото — для оформления, в стоимость не входят.</p>
             <p class="product__meta">Время изготовления — ~7 дней</p>
             <button type="button" class="product__buy">Заказать</button>
@@ -149,7 +171,7 @@
         </article>
 
         <!-- ---------- Свеча №2 — два варианта: шкатулка / свеча ---------- -->
-        <article class="product" data-order-text="Здравствуйте! Хочу заказать: Шкатулка-карусель «Любовь с первого взгляда» (650 ₽)">
+        <article class="product" data-base-order="Здравствуйте! Хочу заказать: Шкатулка-карусель «Любовь с первого взгляда» (650 ₽)">
           <div class="product__gallery">
             <!-- ЧТОБЫ ДОБАВИТЬ ФОТО: скопируй одну строку "product__slide" ниже,
                  поменяй имя файла в url('images/...') и текст в aria-label.
@@ -163,15 +185,28 @@
             <div class="product__dots"></div>
           </div>
           <div class="product__info">
-            <h3 class="product__name">Любовь с первого взгляда💗</h3>
-            <p class="product__price">650 ₽</p>
+            <h3 class="product__name">Любовь с первого взгляда</h3>
+            <div class="product__price-row">
+              <p class="product__price">650 ₽</p>
+              <div class="product__scent">
+              <button type="button" class="product__scent-toggle">Выбрать запах</button>
+              <div class="product__scent-list">
+                <button type="button" class="scent-option" data-scent="Синнабон">Синнабон</button>
+                <button type="button" class="scent-option" data-scent="Попкорн">Попкорн</button>
+                <button type="button" class="scent-option" data-scent="Бананово-ореховый хлеб">Бананово-ореховый хлеб</button>
+                <button type="button" class="scent-option" data-scent="Солёная карамель">Солёная карамель</button>
+                <button type="button" class="scent-option" data-scent="Тыква-карамель">Тыква-карамель</button>
+                <button type="button" class="scent-option" data-scent="Малина-ваниль">Малина-ваниль</button>
+              </div>
+            </div>
+            </div>
             <p class="product__desc">Шкатулка в виде карусели с рельефными лошадками, расписана вручную серебром или золотом на выбор.</p>
 
             <!-- переключатель варианта — без него цена и кнопка "Заказать"
                  не поменяются; не убирай data-атрибуты у кнопок -->
             <div class="product__variants">
-              <button type="button" class="variant is-active" data-price="650 ₽" data-label="Шкатулка (без свечи)" data-order="Здравствуйте! Хочу заказать: Шкатулка-карусель «Любовь с первого взгляда» (650 ₽)">Шкатулка</button>
-              <button type="button" class="variant" data-price="900 ₽" data-label="Свеча" data-order="Здравствуйте! Хочу заказать: Свеча-карусель «Любовь с первого взгляда» (900 ₽)">Свеча</button>
+              <button type="button" class="variant is-active" data-price="650 ₽" data-label="Шкатулка (без свечи)" data-order="Здравствуйте! Хочу заказать: Шкатулка-карусель «Любовь с первого взгляда» (650 ₽)" data-has-scent="false">Шкатулка</button>
+              <button type="button" class="variant" data-price="900 ₽" data-label="Свеча" data-order="Здравствуйте! Хочу заказать: Свеча-карусель «Любовь с первого взгляда» (900 ₽)" data-has-scent="true">Свеча</button>
             </div>
 
             <p class="product__meta">Время изготовления — ~7 дней</p>
@@ -180,7 +215,7 @@
         </article>
 
         <!-- ---------- Свеча №3 — название придумывает Никита с сестрой ---------- -->
-        <article class="product" data-order-text="Здравствуйте! Хочу заказать: Свеча-тыква (1300 ₽)">
+        <article class="product" data-base-order="Здравствуйте! Хочу заказать: Свеча-тыква (1300 ₽)">
           <div class="product__gallery">
             <!-- ЧТОБЫ ДОБАВИТЬ ФОТО: скопируй одну строку "product__slide" ниже,
                  поменяй имя файла в url('images/...') и текст в aria-label.
@@ -196,8 +231,22 @@
           </div>
           <div class="product__info">
             <!-- ЗАМЕНИ НА НАЗВАНИЕ, КОТОРОЕ ПРИДУМАЕТЕ С АНАСТАСИЕЙ -->
-            <h3 class="product__name">Свеча-тыква🍂</h3>
-            <p class="product__price">1 300 ₽</p>
+            <h3 class="product__name">Свеча-тыква</h3>
+            <div class="product__price-row">
+              <p class="product__price">1 300 ₽</p>
+              <div class="product__scent">
+              <button type="button" class="product__scent-toggle">Выбрать запах</button>
+              <div class="product__scent-list">
+                <button type="button" class="scent-option" data-scent="Синнабон">Синнабон</button>
+                <button type="button" class="scent-option" data-scent="Попкорн">Попкорн</button>
+                <button type="button" class="scent-option" data-scent="Бананово-ореховый хлеб">Бананово-ореховый хлеб</button>
+                <button type="button" class="scent-option" data-scent="Солёная карамель">Солёная карамель</button>
+                <button type="button" class="scent-option" data-scent="Тыква-карамель">Тыква-карамель</button>
+                <button type="button" class="scent-option" data-scent="Малина-ваниль">Малина-ваниль</button>
+              </div>
+            </div>
+            </div>
+            <!-- ЧЕРНОВИК ОПИСАНИЯ — ПОДГОНИТЕ ПОД РЕАЛЬНЫЙ СОСТАВ/РАЗМЕР -->
             <p class="product__desc">Декоративная свеча в виде тыквы с кленовым листом цвета золота на крышке. Внутри — чайная свеча; когда она прогорит, тыкву можно использовать как шкатулку для мелочей.</p>
             <p class="product__meta">Время изготовления — ~7 дней</p>
             <button type="button" class="product__buy">Заказать</button>
@@ -205,7 +254,7 @@
         </article>
 
         <!-- ---------- Свеча №4 ---------- -->
-        <article class="product" data-order-text="Здравствуйте! Хочу заказать: Ice Matcha Latte 200мл (1100 ₽)">
+        <article class="product" data-base-order="Здравствуйте! Хочу заказать: Ice Matcha Latte 200мл (1100 ₽)">
           <div class="product__gallery">
             <!-- ЧТОБЫ ДОБАВИТЬ ФОТО: скопируй одну строку "product__slide" ниже,
                  поменяй имя файла в url('images/...') и текст в aria-label.
@@ -221,8 +270,22 @@
             <div class="product__dots"></div>
           </div>
           <div class="product__info">
-            <h3 class="product__name">Ice Matcha Latte🌿</h3>
-            <p class="product__price">1 100 ₽</p>
+            <h3 class="product__name">Ice Matcha Latte</h3>
+            <div class="product__price-row">
+              <p class="product__price">1 100 ₽</p>
+              <div class="product__scent">
+              <button type="button" class="product__scent-toggle">Выбрать запах</button>
+              <div class="product__scent-list">
+                <button type="button" class="scent-option" data-scent="Синнабон">Синнабон</button>
+                <button type="button" class="scent-option" data-scent="Попкорн">Попкорн</button>
+                <button type="button" class="scent-option" data-scent="Бананово-ореховый хлеб">Бананово-ореховый хлеб</button>
+                <button type="button" class="scent-option" data-scent="Солёная карамель">Солёная карамель</button>
+                <button type="button" class="scent-option" data-scent="Тыква-карамель">Тыква-карамель</button>
+                <button type="button" class="scent-option" data-scent="Малина-ваниль">Малина-ваниль</button>
+              </div>
+            </div>
+            </div>
+            <!-- ЧЕРНОВИК ОПИСАНИЯ -->
             <p class="product__desc">Свеча в стеклянном стакане с эффектом ледяного матча-латте — воск уложен слоями, имитируя кубики льда. Объём 200 мл, в комплекте деревянная крышка.</p>
             <p class="product__meta">Время изготовления — ~7 дней</p>
             <button type="button" class="product__buy">Заказать</button>
@@ -258,14 +321,16 @@
       <h2 class="section__title">Контакты</h2>
       <p class="contacts__text">Все заказы — через Telegram: напишите, какая свеча понравилась, и договоримся об оплате и доставке.</p>
 
-      <!-- ЗАМЕНИ НА НАСТОЯЩИЙ НОМЕР ТЕЛЕФОНА -->
-      <p class="contacts__phone">
-        Телефон: <a href="tel:+79827602682">+7 (982) 760-26-82</a>
-      </p>
-      <a href="https://t.me/anastexxx" target="_blank" rel="noopener" class="btn btn--primary btn--telegram">
-        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 4 3 11l6 2 2 6 3-4 5 3Z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M9 13l9-7" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
-        Написать в Telegram
-      </a>
+      <div class="contacts__buttons">
+        <a href="https://t.me/anastexxx" target="_blank" rel="noopener" class="btn btn--primary btn--telegram">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 4 3 11l6 2 2 6 3-4 5 3Z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M9 13l9-7" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
+          Написать в Telegram
+        </a>
+        <a href="https://max.ru/u/f9LHodD0cOLWn0wAa0ka9zTOS3oyFRQGdNlT3SwSWHForhKJPjMu4NOihv0" target="_blank" rel="noopener" class="btn btn--primary btn--telegram">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4a8 8 0 0 0-8 8 7.8 7.8 0 0 0 1.8 5L5 20l3.3-1.5A8 8 0 1 0 12 4Z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+          Написать в MAX
+        </a>
+      </div>
     </div>
   </section>
 
@@ -276,3 +341,5 @@
   <script src="script.js"></script>
 </body>
 </html>
+
+
